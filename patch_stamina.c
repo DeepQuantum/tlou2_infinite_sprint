@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +18,13 @@ int main(int argc, char *argv[])
     multiplier_file = fopen("multiplier.txt", "r");
     if (multiplier_file == NULL)
     {
-        printf("Couldn't open file multiplier_file.");
+        printf("Couldn't open file multiplier.txt.");
+        return 1;
+    }
+    struct stat buffer;
+    if (stat(".\\ndarc.exe", &buffer) != 0)
+    {
+        printf("ndarc.exe wasn't found in this folder.\n");
         return 1;
     }
 
@@ -35,7 +42,7 @@ int main(int argc, char *argv[])
     printf("Creating the new archive .\\%.2fx_stamina.psarc...\n", new_stamina_value);
     system(command);
 
-    printf("New archive created successfully. Press any button to quit.\n");
+    printf("New archive created successfully. You can now copy it into your mods folder. Press any button to quit.\n");
     getchar();
 
     return 0;
