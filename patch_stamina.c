@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     if (bin_file == NULL)
     {
         printf("Couldn't open file \"infinite_sprint_unpacked\\bin\\dc1\\player_settings.bin\".");
+        getchar();
         return 1;
     }
 
@@ -19,12 +20,14 @@ int main(int argc, char *argv[])
     if (multiplier_file == NULL)
     {
         printf("Couldn't open file multiplier.txt.");
+        getchar();
         return 1;
     }
     struct stat buffer;
     if (stat(".\\ndarc.exe", &buffer) != 0)
     {
         printf("ndarc.exe wasn't found in this folder.\n");
+        getchar();
         return 1;
     }
 
