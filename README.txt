@@ -25,5 +25,6 @@ any previous files associated with this mod, as they will otherwise conflict.
 
 ======== CHANGELOG ========
 
+* 2.0.1 | Fixed missing getchars
 * 2.0.0 | Added custom stamina amount
 * 1.0.0 | Release

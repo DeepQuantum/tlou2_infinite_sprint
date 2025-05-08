@@ -36,7 +36,6 @@ int main(int argc, char *argv[])
     new_stamina_value = 20.f * multiplier;
     fseek(bin_file, offset, SEEK_SET);
     fwrite(&new_stamina_value, sizeof(float), 1, bin_file);
-    fwrite(&new_stamina_value, sizeof(float), 1, bin_file);
     fclose(bin_file);
     fclose(multiplier_file);
     printf("Changed stamina drain value from %f to %f\n", 20.f, new_stamina_value);
